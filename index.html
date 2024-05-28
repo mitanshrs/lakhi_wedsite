@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LAKHI ELECTRIONS AIRCONDITIONERS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <style type="text/css">
+			.w3-merriweather {
+			  font-family: "Merriweather", serif;
+			}
+			#loader {
+			  position: absolute;
+			  left: 50%;
+			  top: 50%;
+			  z-index: 1;
+			  width: 120px;
+			  height: 120px;
+			  margin: -76px 0 0 -76px;
+			  border: 16px solid #f3f3f3;
+			  border-radius: 50%;
+			  border-top: 16px solid #000000;
+			  -webkit-animation: spin 2s linear infinite;
+			  animation: spin 2s linear infinite;
+			}
+
+			@-webkit-keyframes spin {
+			  0% { -webkit-transform: rotate(0deg); }
+			  100% { -webkit-transform: rotate(360deg); }
+			}
+			.notSelTxt{
+			  -webkit-user-select: none; /* Safari */
+			  -ms-user-select: none; /* IE 10 and IE 11 */
+			  user-select: none; /* Standard syntax */
+			}
+			@keyframes spin {
+			  0% { transform: rotate(0deg); }
+			  100% { transform: rotate(360deg); }
+			}
+			.bar-search {
+			  outline: none !important;
+			  padding: 7px 7px 9px 7px;
+			  color: #333;
+			  font-size: 16px;
+			  height: 39px;
+			  margin-top: 10px;
+			}
+			.bar-height{
+			  height: 60px;
+			}
+			.bar-logo{
+			  margin-top: 5px;
+			  height: 50px;
+			  width: 50px;
+			}
+			.bar-cart{
+			  padding-top: 20px;
+			  padding-left: 5%;
+			  width:30%;
+			}
+			.bar-neg{
+			  overflow: hidden;
+			  width:300px;
+			   text-overflow: ellipsis;
+			   display: -webkit-box;
+			   -webkit-line-clamp: 2;
+			   -webkit-box-orient: vertical;
+			   line-height: normal;
+			}
+
+			.bar-neg-sub{
+			  display: none;
+			}
+			.cnt-ctr-lar{
+			  margin-top: 100px;
+			}
+			.cnt-ctr-sml{
+
+			    display: none;
+			    background: #FFF;
+			}
+
+			.thbGrd{
+			  max-width: 98%;
+			  max-height: 98%;
+			  font-size: 140px;
+			}
+
+			.inpDraLef{
+			  position: absolute;
+			  margin-top: 10px;
+			  margin-left: 5px;
+			}
+
+			.btnWhts{
+			  padding: 5px;
+			  position:fixed;
+			  width:60px;
+			  height:60px;
+			  bottom:40px;
+			  right:40px;
+			  background-color:#25d366;
+			  color:#FFF;
+			  border-radius:50px;
+			  text-align:center;
+			  font-size:30px;
+			  box-shadow: 2px 2px 3px #999;
+			  z-index:100;
+			}
+			.ctnItm{
+			  min-height: 800px;
+			}
+			.ctnCtgDro{
+			  max-height: 300px;
+			  overflow: auto;
+			  width: 250px;
+			}
+			.ctnSrtDro{
+			  width: 180px;
+			}
+			.fxd{
+			  position: fixed;
+			  top:0;
+			  left:0;
+			  width: 100%;
+			  z-index: 1000;
+			}
+			.mrgItm{
+			  margin-left: 8%;
+			  margin-right: 8%;
+			}
+			.pointer{
+				cursor: pointer;
+			}
+			.btnPag{
+				color: #1A73E8;
+				border: none;
+				background: transparent;
+			}
+			.pagCur{
+				padding-top: 5px;
+				padding-bottom: 5px;
+				padding-left: 12px;
+				padding-right: 12px;
+				background: #0000000C;
+				font-weight: bold;
+			}
+			.spc50{
+				margin-top: 50px;
+			}
+			.inNum{
+			  	width: 90px;
+			  	text-align: center;
+			 }
+
+			@media screen and (max-width: 1200px) {
+			  .bar-cart{
+			    padding-top: 20px;
+			    padding-left: 3%;
+			    width:20%;
+			  }
+			  .mrgItm{
+			    margin-left: 4%;
+			    margin-right: 4%;
+			  }
+			}
+
+			@media screen and (max-width: 760px) {
+			  .bar-neg{
+			    display: none;
+			  }
+			  .bar-cart{
+			    padding-left: 16px;
+			    width:80px;
+			  }
+
+
+			  .bar-neg-sub{
+			    display: block;
+			  }
+			  .content-cat{
+			    display: none;
+			  }
+			  .cnt-ctr-lar{
+			    display: none;
+			  }
+			  .cnt-ctr-sml{
+			    display: block;
+			    background: #FFF;
+			  }
+
+			  .ctnItm{
+			    min-height: 400px;
+			  }
+			  .mrgItm{
+			    margin-left: 2%;
+			    margin-right: 2%;
+			  }
+			  .btnPag{
+				color: #1A73E8;
+				border: none;
+				background: transparent;
+				font-size: 11px;
+			  }
+			  .spc50{
+				margin-top: 25px;
+			  }
+			  .inNum{
+			  	width: 60px;
+			  	text-align: center;
+			  }
+
+			}
+
+		</style>
+
+
+    </head>
+    <body ng-app='app' style="background-color: #ebebeb;" ng-controller='ctrMan' ng-cloack>
+
+        <div id="loader"></div>
+        <div id="ctnMan" style="visibility: hidden;">
+            <div class="w3-row {{clt}} fxd" >
+                <div class="w3-col w3-left w3-container bar-height" style="width:80px">
+                    <img id="lg" src="logo.jpg" class="w3-round bar-logo" alt="">
+                </div>
+                <div class="w3-col w3-left w3-container bar-height bar-neg">
+                    <h4 id="labNeg"  class="w3-merriweather" style="font-weight: bold; line-height: 22px;margin: 5px 0px; line-height: 25px; visibility: hidden;" ng-model="ngc">{{ngc}}</h4>
+                </div>
+                <div class="w3-col w3-right w3-center bar-height bar-cart" >
+                    <div ng-hide='!crt'>
+                        <i class="fa fa-shopping-cart  w3-xlarge pointer w3-left" ng-click='myCrt()' ></i>
+                        <span id="bdgCrt" class="w3-badge w3-red w3-small w3-left" style="margin-top:-5px;margin-left: 1px;">0</span>
+                    </div>
+
+                </div>
+                <div class="w3-rest bar-height">
+                    <input class="w3-input w3-border w3-round bar-search w3-merriweather" placeholder="{{txtBsc+'...'}}" type="text" maxlength="30" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" ng-model="srch" ng-init="srch=''" ng-Keyup="configPages()">
+                </div>
+            </div>
+            <div class="w3-container w3-merriweather w3-center {{clt}}  bar-neg-sub" style="margin-top:60px;" ng-model="ngc">
+                <h3 ng-hide="ngc.length>15">{{ngc}}</h3><h5 ng-hide="ngc.length<16">{{ngc}}</h5>
+            </div>
+
+
+            <div class="w3-row cnt-ctr-sml w3-merriweather w3-card">
+                <div class="w3-container w3-col s5 w3-center" >
+                    <div onclick="document.getElementById('modCtg').style.display='block'" ng-hide="ctgs.length<2">
+                        <h4 class="notSelTxt" style="color: {{cblu}};">{{txtCtg}}</h4>
+                    </div>
+
+
+
+                </div>
+                <div class="w3-container w3-col s2 w3-center"><h4 style="color: #00000021;">|</h4></div>
+                <div class="w3-container w3-col s5 w3-center" onclick="document.getElementById('modSrt').style.display='block'">
+                    <h4 class="notSelTxt" style="color: {{cblu}};">{{txtSrt}}</h4>
+                </div>
+            </div>
+
+            <div class="w3-container cnt-ctr-lar">
+
+                <div class="w3-left w3-merriweather" style="margin-left:50px;" ng-hide="ctgs.length<2">
+                    {{txtCtg}}
+                    <div class="w3-dropdown-hover w3-merriweather">
+                        <button class="w3-button {{clt}}" style="width:250px">{{txtCtgCrt}}</button>
+                        <div class="w3-dropdown-content w3-bar-block ctnCtgDro {{clt}}" >
+                            <a href="" class="w3-bar-item w3-button" ng-repeat='ctg in ctgs' ng-click='selCtg(ctg)'>{{ctg.n}}</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="w3-right w3-merriweather" style="margin-right:50px;">
+                    {{txtSrt}}
+                    <div class="w3-dropdown-hover w3-merriweather">
+                        <button class="w3-button {{clt}}" style="width:180px">{{txtSrtCrt}}</button>
+                        <div class="w3-dropdown-content w3-bar-block ctnSrtDro {{clt}}">
+                            <a href="" class="w3-bar-item w3-button" ng-click="selSrt(0)">{{txtAlf}}</a>
+                            <a href="" class="w3-bar-item w3-button" ng-click="selSrt(1)">{{txtMyp}}</a>
+                            <a href="" class="w3-bar-item w3-button" ng-click="selSrt(2)">{{txtMnp}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="w3-container spc50" >
+
+                <div ng-init='configPages()'  class="w3-row-padding ctnItm">
+                    <div class="w3-col s12 m6 l4" ng-repeat='itm in itmsCur | orderBy:sort| startFromGrid: currentPage * pageSize | limitTo: pageSize '>
+                        <div class="w3-panel w3-card w3-white mrgItm w3-merriweather">
+                            <div ng-hide="!img"  class="w3-container w3-margin-bottom w3-center" style="height: 260px">
+                                <img ng-hide="{{itm.l=='null'?true:false}}" src="{{itm.l+'.jpg'}}" class="w3-round thbGrd" onload="ajIm(this)">
+                                <i ng-hide="{{itm.l=='null'?false:true}}" class="fa fa-image w3-round thbGrd" style="margin-top:60px;"></i>
+
+                            </div>
+                            <div class="w3-margin-top w3-margin-bottom w3-border-bottom"></div>
+                            <p class="w3-small" style="line-height: 0.7;" ng-hide="cla">{{itm.k}}</p>
+                            <p class="w3-small" style="line-height: 0.7;" ng-hide="uni">{{itm.u}}</p>
+                            <p style="line-height: 1.1; height: 35px;">{{itm.d}}</p>
+
+                            <div class="w3-row w3-center w3-margin-top w3-margin-bottom" style="height:40px;">
+                                <div class="w3-col w3-right" style="width:60px">
+
+                                    <i class="fa fa-cart-plus w3-xxlarge pointer" ng-click='addCrt($event.currentTarget,itm)'  style="color: {{cblu}};" ng-hide='!crt'></i>
+                                </div>
+                                <div class="w3-rest w3-center">
+                                    <label ng-class="{'w3-large':itm.p.length>12,'w3-xlarge':itm.p.length<=12}">{{itm.p}}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='btn-group w3-center spc50'>
+                    <button type='button' class='w3-merriweather btnPag pointer' ng-hide='currentPage == 0' ng-click='ntr()'>< {{txtPrv}}</button>
+                    <label class="w3-merriweather w3-large w3-margin-left pagCur">{{currentPage+1}}</label><label class="w3-merriweather w3-large w3-margin-right">{{' / '+ pages.length }}</label>
+                    <button type='button' class='w3-merriweather btnPag pointer' ng-hide='currentPage >= itmsCur.length/pageSize - 1' , ng-click='nxt()'>{{txtNxt}} ></button>
+                </div>
+
+            </div>
+
+            <br><br><br>
+            <footer class="w3-container w3-padding-32 spc50 {{clt}}">
+                <div class="w3-row-padding w3-center">
+                    <div class="{{ txtInf==null||txtInf==''?'':'w3-half' }}" ng-hide="txtTel==null||txtTel==''?true:false">
+                        <div class="w3-container" id="contact">
+                            <h4 class="w3-merriweather">{{ngc}}</h4>
+                            <a href="tel:{{txtTel}}" ><i class="fa fa-phone"></i>{{txtTel}}</a><br>
+                            <a class="w3-margin-top" href="mailto:{{txtCor}}" ng-hide="txtCor==''||txtCor==null?true:false"><i class="fa fa-envelope"></i>{{txtCor}}</a>
+                        </div>
+                    </div>
+
+                    <div class="{{ txtTel==null||txtTel==''?'':'w3-half' }}" ng-hide="txtInf==null||txtInf==''?true:false">
+                        <p id="textInf" ></p>
+                    </div>
+
+
+                </div>
+                <div style="height:90px" ng-hide="!wat"></div>
+            </footer>
+            <a ng-hide="!wat" href="https://api.whatsapp.com/send?phone={{txtTel}}" class="btnWhts" target="_blank">
+                <i class="fa fa-whatsapp w3-xxxlarge"></i>
+            </a>
+
+
+            <div id="modCrt" class="w3-modal" style="padding-top:30px;z-index: 3000;">
+                <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px;overflow: auto; height: 90%;">
+
+                    <div class="w3-center"><br>
+                        <span onclick="document.getElementById('modCrt').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">{{clo}} &times;</span>
+                    </div>
+                    <form class="w3-container w3-margin-top" ng-submit="snd()">
+                        <div class="w3-section">
+                            <div class="w3-padding-small">
+                                <i class="fa fa-user w3-xlarge inpDraLef"></i><input class="w3-input w3-border" style="padding-left: 35px;" placeholder="{{txtPlaNam}}" type="text" ng-model="namc" required>
+                            </div>
+
+                            <input class="w3-button w3-block w3-section w3-padding w3-margin-top w3-merriweather {{clt}}" type="submit" value="{{txtSct}}"  ng-hide="btc">
+                            <div class="w3-center" ng-hide="lod"><i class="fa fa-spinner w3-jumbo w3-spin"></i></div>
+                            <p ng-hide="itmsCrt.itms.length>0?true:false"  class="w3-display-middle">{{txtSin}}</p>
+                            <div class="w3-row w3-border-bottom w3-padding-16" ng-repeat='itm in itmsCrt.itms'>
+                                <div ng-hide="!img"  class="w3-col s3 m2 l2 w3-center">
+                                    <img ng-hide="{{itm.l=='null'?true:false}}" src="{{itm.l+'.jpg'}}" class="w3-round" style="width:90%;">
+
+                                    <i ng-hide="{{itm.l=='null'?false:true}}" class="fa fa-image w3-jumbo w3-round" style="width:90%;"></i>
+
+                                </div>
+                                <div class="w3-col s9 m10 l10">
+                                    <span class="w3-margin-left w3-merriweather" ng-hide="cla">{{itm.k}}</span><br>
+                                    <span class="w3-margin-left w3-merriweather" ng-hide="uni">{{itm.u}}</span><br>
+                                    <span class="w3-margin-left w3-merriweather">{{itm.d}}</span>
+                                    <div class="w3-row">
+                                        <div class="w3-col s2 m5 l5 w3-text-red">
+                                            <i class="fa fa-trash w3-xlarge w3-right" style="margin-top: 5px;" ng-click='delItmCrt(itm)'></i>
+                                        </div>
+                                        <div class="w3-col s10 m7 l7 ">
+                                            <i class="fa fa-plus-circle w3-xlarge w3-margin-right w3-right" ng-click='itm.q=itm.q+1' style="margin-top: 5px;"></i>
+
+                                            <span class="w3-margin-left w3-margin-right w3-xlarge w3-right"><input class="inNum" type="text" ng-model="itm.q" ></span>
+                                            <i class="fa fa-minus-circle w3-xlarge w3-right" ng-click='itm.q=itm.q-1<0?itm.q:itm.q-1' style="margin-top: 5px;"></i>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+
+
+            <div id="modSrt" class="w3-modal" style="z-index: 3000;">
+                <div class="w3-modal-content w3-card-4">
+                    <header class="w3-container {{clt}}">
+                        <span onclick="document.getElementById('modSrt').style.display='none'"
+                                class="w3-button w3-display-topright">&times;</span>
+                        <h2>{{txtSrt}}</h2>
+                    </header>
+                    <div class="w3-container">
+                        <ul class="w3-ul w3-border-bottom">
+                            <li class="w3-container notSelTxt" ng-click="selSrt(0)">{{txtAlf}}</li>
+                            <li class="w3-container notSelTxt" ng-click="selSrt(1)">{{txtMyp}}</li>
+                            <li class="w3-container notSelTxt" ng-click="selSrt(2)">{{txtMnp}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="modCtg" class="w3-modal" style="z-index: 3000;">
+                <div class="w3-modal-content w3-card-4">
+                    <header class="w3-container {{clt}}">
+                        <span onclick="document.getElementById('modCtg').style.display='none'"
+                                class="w3-button w3-display-topright">&times;</span>
+                        <h2>{{txtCtg}}</h2>
+                    </header>
+                    <div class="w3-container" style="overflow: auto; max-height: 320px;">
+                        <ul class="w3-ul w3-monospace" ng-repeat='ctg in ctgs'>
+                            <li class="w3-border-bottom w3-container" ng-click='selCtg(ctg)'>{{ctg.n}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <script type="text/javascript">
+
+			angular.module('app', [])
+			  .controller('ctrMan',
+			    function($scope) {
+			      var modCtg = document.getElementById('modCtg');
+			      var modSrt = document.getElementById('modSrt');
+			      var modCrt = document.getElementById('modCrt');
+			      var bdgCrt = document.getElementById("bdgCrt");
+			      window.onclick = function(event) {
+			        if (event.target == modCtg) {
+			          modCtg.style.display = "none";
+			        }else if(event.target == modSrt){
+			          modSrt.style.display = "none";
+			        }
+			        else if(event.target == modCrt){
+			          modCrt.style.display = "none";
+			        }
+			      }
+			      $scope.currentPage = 0;
+			      $scope.pagSiz = 0;
+			      $scope.pageSize = 6;
+			      $scope.pages = [];
+			      $scope.itms = [];
+			      $scope.itmsCur = [];
+			      $scope.ctgs = [];
+			      $scope.itmsCrt = [];
+			      $scope.txtSrt = '...';
+			      $scope.txtCtg = '...';
+			      $scope.txtAlf = '...';
+			      $scope.txtMay = '...';
+			      $scope.txtMen = '...';
+			      $scope.txtNxt = '...';
+			      $scope.txtPrv = '...';
+			      $scope.txtSrtCrt = $scope.txtAlf;
+			      $scope.sort = 'd';
+			      $scope.ctg = '';
+			      $scope.txtTel='';
+			      $scope.txtCor='';
+			      $scope.txtInf='';
+			      $scope.txtSct='';
+			      $scope.txtPlaNam='';
+			      $scope.txtSct='';
+			      $scope.txtSin='';
+			      $scope.uni = false;
+			      $scope.cla = false;
+			      $scope.wat = false;
+			      $scope.crt = false;
+			      $scope.lod = true;
+			      $scope.btc = false;
+			      $scope.img = true;
+			      $scope.ctok='';
+			      $scope.ernw='';
+			      $scope.clt = 'w3-black';
+			      $scope.cblu = '#1A73E8';
+			      $scope.cgre = '#33AA66';
+			      $scope.clo = 'close';
+
+				  $scope.configPages = function() {
+				  		var q = $scope.srch;
+				  		try{
+				  			q = $scope.srch.replace(" ","");
+				  		}catch(e){
+
+				  		}
+				        if($scope.ctg=='' && q=='' ){
+				            $scope.itmsCur = $scope.itms;
+				        }else{
+
+				        	if(q != ''){
+				        		$scope.txtCtgCrt = $scope.ctgs[0].n;
+				        		$scope.ctg = 0;
+				        		$scope.currentPage = 0;
+				        	}
+				            $scope.itmsCur = [];
+				            try{
+				            	$scope.itms.forEach( function(val, ind, arr) {
+
+					                var ax = q==""?true:(val.d.toUpperCase().search(q.toUpperCase() ) > -1  );
+
+					                if( ($scope.ctg=='' || val.c==$scope.ctg) && ax ){
+					                    $scope.itmsCur.push(val);
+					                }
+					            });
+				            }catch(e){
+
+				            }
+				        }
+				        var intRef = 20;
+				        $scope.pages.length = 0;
+				        var ini = $scope.currentPage - 4;
+				        var fin = $scope.currentPage + 5;
+				        if (ini < 1) {
+				          ini = 1;
+				          fin = Math.ceil($scope.itmsCur.length / $scope.pageSize);
+				        } else {
+				            ini = -1;
+				            fin = Math.ceil($scope.itmsCur.length / $scope.pageSize);
+				        }
+				        if (ini < 1) ini = 1;
+				        for (var i = ini; i <= fin; i++) {
+				          $scope.pages.push({
+				            no: i
+				          });
+				        }
+				        if ($scope.currentPage >= $scope.pages.length)
+				          $scope.currentPage = $scope.pages.length;
+				      };
+
+
+
+			      $scope.setPage = function(index) {
+			        $scope.currentPage = index - 1;
+			      };
+
+			      $scope.nxt = function() {
+			        $scope.currentPage = $scope.currentPage + 1;
+			        topScr();
+			      };
+			      $scope.ntr = function() {
+			      	$scope.currentPage = $scope.currentPage - 1;
+			        topScr();
+			      };
+
+
+			      $scope.addCrt = function(e,itm){
+			        e.setAttribute('class','fa fa-check-circle w3-xxlarge pointer');
+			        e.style.color = $scope.cgre;
+				    addItmCrt(itm);
+				    setTimeout(function () {
+				      e.setAttribute('class','fa fa-cart-plus w3-xxlarge pointer');
+				      e.style.color = $scope.cblu;
+				    }, 600);
+
+
+			      }
+
+			      $scope.myCrt = function(){
+			        modCrt.style.display='block';
+			        $scope.itmsCrt = getStg();
+			      }
+			      $scope.delItmCrt = function(itm){
+			        $scope.itmsCrt = delItmCrt(itm);
+			      }
+			      $scope.selSrt = function(sel){
+			        switch(sel) {
+			          case 0:
+			            $scope.txtSrtCrt = $scope.txtAlf;
+			            $scope.sort = 'd';
+			            break;
+			          case 1:
+			            $scope.txtSrtCrt = $scope.txtMyp;
+			            $scope.sort = '-v';
+			            break;
+			          case 2:
+			            $scope.txtSrtCrt = $scope.txtMnp;
+			            $scope.sort = 'v';
+			            break;
+			        }
+			        modSrt.style.display = "none";
+			      }
+			      $scope.selCtg = function(ctg){
+
+			        $scope.txtCtgCrt = ctg.n;
+			        $scope.ctg = ctg.i==0?'':ctg.i;
+			        modCtg.style.display = "none";
+			        $scope.currentPage = 0;
+			        $scope.srch = '';
+			        $scope.configPages();
+			      }
+			      $scope.srchAll = function(){
+			        console.log("mycart: "+$scope.srch);
+
+			      }
+			      $scope.snd = function(){
+
+			        var text = $scope.txtPlaNam+": "+$scope.namc+"\n\n";
+			        var suc = true;
+
+			        $scope.itmsCrt.itms.forEach( function(v, i, ar) {
+
+			        	if( !(!isNaN(v.q) && !isNaN(parseFloat(v.q) ) ) ){
+			        		suc = false;
+			        		return;
+			        	}
+
+			            text += "*"+v.q+" -> "+v.d+" :"+v.k+"\n";
+			        });
+
+			        if(suc){
+			        	setStg({});
+			            $scope.itmsCrt = [];
+			            bdgCrt.style.visibility = "hidden";
+			            modCrt.style.display = "none";
+
+				        window.open(
+				          encodeURI('https://api.whatsapp.com/send?phone='+$scope.txtTel+'&text='+text),
+				          '_blank'
+				        );
+			        }else{
+			        	alert("only numeric values");
+			        }
+
+
+			      }
+			      addItmCrt(null);
+			      var unts = {};
+			      var result = data;
+
+
+			        var ctnMan = document.getElementById("ctnMan");
+			        ctnMan.style.visibility = "visible";
+			        var loader = document.getElementById("loader");
+			        loader.style.visibility = "hidden";
+			        var lg_v = document.getElementById("lg");
+			        var ngc = result.ngc;
+
+
+			        $scope.txtSrt = result.orp;
+			        $scope.txtCtg = result.ctgs;
+			        $scope.txtAlf = result.alf;
+			        $scope.txtMyp = result.myp;
+			        $scope.txtMnp = result.mnp;
+			        $scope.txtBsc = result.bsc;
+			        $scope.txtNxt = result.nxt;
+			      	$scope.txtPrv = result.prv;
+			        $scope.ctok = result.ctok;
+			        $scope.ernw = result.ernw;
+
+			        $scope.txtTel = result.tel2;
+			        $scope.txtCor = result.cor2;
+			        $scope.txtInf = result.dir2;
+
+			        $scope.img = result.img;
+
+			        $scope.uni = !result.uni;
+			        $scope.cla = !result.cla;
+			        $scope.clo = result.clo;
+
+
+			        $scope.wat = result.wha&&result.tel2!='';
+			        $scope.crt = result.crt&&result.tel2!='';
+			        $scope.txtSct = result.sct;
+			        $scope.txtPlaNam = result.nam;
+
+			        $scope.txtSin = result.sin;
+
+			        $scope.txtSct = result.sct;
+			        $scope.txtSrtCrt = $scope.txtAlf;
+
+			        $scope.clt = result.clt;
+			        $scope.ngc = ngc;
+
+
+			        if(result.lg.length>0){
+			          $scope.lg = result.lg;
+			        }else{
+			          lg_v.style.visibility = "hidden";
+			          $scope.lg = "0=="
+			        }
+
+			        result.und.forEach( function(val, ind, arr) {
+			            unts[val.i] = val.n;
+			        });
+
+
+			        $scope.itms = result.itm;
+			        $scope.ctgs = result.ctg;
+			        $scope.txtCtgCrt = $scope.ctgs[0].n;
+
+
+			        $scope.itms.forEach( function(val, ind, arr) {
+			            val.u = unts[val.u];
+
+			        });
+
+
+
+			        var link = document.createElement('link');
+			        link.rel = 'icon';
+			        document.getElementsByTagName('head')[0].appendChild(link);
+			        link.href = 'logo.png';
+			        $scope.currentPage = 1;
+			        $scope.configPages();
+			        topScr();
+					setTimeout(function () {
+				      	var el = document.getElementById('labNeg');
+					   	var divHeight = el.offsetHeight
+					   	var lineHeight = parseInt(el.style.lineHeight);
+					   	var lines = divHeight / lineHeight;
+	    				if( lines < 2){
+	    					el.style.lineHeight = "50px";
+	    				}
+	    				if($scope.ngc.length>25){
+							el.style.fontSize = "16px";
+	    				}
+	    				if($scope.ngc.length>40){
+							el.style.fontSize = "14px";
+	    				}
+	    				el.style.visibility = "visible";
+				    }, 400);
+			    })
+			.filter('startFromGrid', function() {
+			  return function(input, start) {
+			    start = +start;
+			    return input.slice(start);
+			  }
+			});
+			var stgLoc={};
+            function stgChk(){
+                var test = 'test';
+                try {
+                    localStorage.setItem(test, test);
+                    localStorage.removeItem(test);
+                    return true;
+                } catch(e) {
+                    return false;
+                }
+            }
+            function getStg(){
+                if( stgChk() ){
+                  var itmsAux = localStorage.getItem("mn_shop_13x");
+                  return itmsAux==null?{}:JSON.parse(itmsAux);
+                }else{
+                  return stgLoc;
+                }
+            }
+            function setStg(itms){
+                if( stgChk() ){
+                  localStorage.setItem("mn_shop_13x", JSON.stringify(itms) );
+                }else{
+                  stgLoc = itms;
+                }
+            }
+			function addItmCrt(itm){
+			    var itmsCrt = getStg();
+			    if(itmsCrt.itms==undefined){
+			        itmsCrt.itms = [];
+			        if(itm!=null){
+			          itm.q = 1;
+			          itmsCrt.itms.push(itm);
+			        }
+			      }else if(itm!=null){
+			          var aux = null;
+			          for(var i=0;i<itmsCrt.itms.length;i++){
+			            if(itmsCrt.itms[i].i==itm.i){
+			                aux=itmsCrt.itms[i];
+			                break;
+			              }
+			          }
+			          if(aux==null){
+			            itm.q = 1;
+			            itmsCrt.itms.push(itm);
+			          }else{
+			            aux.q +=1;
+			          }
+
+			      }
+			    setStg(itmsCrt);
+			    bdgCrt.innerHTML = itmsCrt.itms.length;
+			    bdgCrt.style.visibility = itmsCrt.itms.length==0? "hidden":"visible";
+
+			}
+			function delItmCrt(itm){
+			    var itmsCrt = getStg();
+			    var ind = -1;
+			    for(var i=0;i<itmsCrt.itms.length;i++){
+			      if(itmsCrt.itms[i].i==itm.i){
+			          ind=i;
+			          break;
+			        }
+			    }
+			    if(ind>-1){
+			      itmsCrt.itms.splice(ind, 1);
+			    }
+			    setStg(itmsCrt);
+			    bdgCrt.innerHTML = itmsCrt.itms.length;
+			    bdgCrt.style.visibility = itmsCrt.itms.length==0? "hidden":"visible";
+			    return itmsCrt;
+			}
+			function topScr() {
+			  document.body.scrollTop = 0;
+			  document.documentElement.scrollTop = 0;
+			}
+			function ajIm(el){
+				el.style.marginTop = ((260-el.offsetHeight)/2)+"px";
+			}
+			var data = /*#d4t4#*/ {"itm":[{"c":-300,"d":"INSTALLATION FIXED AC(PER AC)","i":"INSTALLATION FIXED AC(PER AC)#s?","k":">No information","l":"null","p":"₹1,500","u":10,"v":1500,"z":100},{"c":-300,"d":"INSTALLATION SPLIT AC (PER AC)","i":"INSTALLATION SPLIT AC (PER AC)#s?","k":">No information","l":"null","p":"₹1,200","u":10,"v":1200,"z":100},{"c":8,"d":"CASSETTE VOLTAS 2.0 TR INVERTER AC (NO STAR)","i":"CAS-243-V-CZMM-3","k":"CAS-243-V-CZMM-3","l":"CAS-243-V-CZMM-3","p":"₹75,000","u":10,"v":75000,"z":200},{"c":10,"d":"(OTHER PRODUCT) SIEMENS F\/S DISHWASHER SILVER","i":"SN25HI00VI","k":"SN25HI00VI","l":"SN25HI00VI","p":"₹79,990","u":10,"v":79990,"z":200},{"c":4,"d":"FIXED AC MITSUBISHI  NON INVERTER 1.5 TR 2 STAR","i":"MS\/MU-JP18VF","k":"MS\/MU-JP18VF","l":"MS%2FMU-JP18VF","p":"₹46,000","u":10,"v":46000,"z":200},{"c":4,"d":"FIXED AC MITSUBISHI 2TON 1STAR NON INVERTER","i":"MS-JP24VF","k":"MS-JP24VF","l":"MS-JP24VF","p":"₹58,500","u":10,"v":58500,"z":200},{"c":4,"d":"FIXED AC MITSUBISHI HEAVY 1.3 2STAR NON INVERTER","i":"SRK15CXS","k":"SRK15CXS","l":"SRK15CXS","p":"₹48,500","u":10,"v":48500,"z":200},{"c":4,"d":"FIXED AC MITSUBISHI HEAVY 1.6 NON INVERTER 3STAR","i":"SRK20CSS6","k":"SRK20CSS6","l":"SRK20CSS6","p":"₹58,000","u":10,"v":58000,"z":200},{"c":4,"d":"FIXED AC MITSUBISHI HEAVY 2.0 NON INVERTER 3STAR","i":"SRK25CWX","k":"SRK25CWX","l":"SRK25CWX","p":"₹69,500","u":10,"v":69500,"z":200},{"c":4,"d":"FIXED AC OG  1.5  NON INVERTER 3STAR","i":"ASGA18BMWA-B","k":"ASGA18BMWA-B","l":"ASGA18BMWA-B","p":"₹53,000","u":10,"v":53000,"z":200},{"c":4,"d":"FIXED AC OG  2.1 NON INVERTER 3STAR","i":"ASGA24BMWA-B","k":"ASGA24BMWA-B","l":"ASGA24BMWA-B","p":"₹66,000","u":10,"v":66000,"z":200},{"c":4,"d":"FIXED AC OG 1.1 NON INVERTER 3STAR","i":"ASGA12BMWB-B","k":"ASGA12BMWB-B","l":"ASGA12BMWB-B","p":"₹43,000","u":10,"v":43000,"z":200},{"c":4,"d":"FIXED AC ONIDA 1.0 TON  NON INVERTER 3STAR","i":"SR123ATS","k":"SR123ATS","l":"SR123ATS","p":"₹30,500","u":10,"v":30500,"z":200},{"c":4,"d":"FIXED AC ONIDA 1.5 TON  NON INVERTER 3STAR","i":"SR183ATS","k":"SR183ATS","l":"SR183ATS","p":"₹34,500","u":10,"v":34500,"z":200},{"c":4,"d":"FIXED AC PANASONIC 2.0 TR NON INVERTER AC","i":"CS\/CU-KN24ZKY","k":"CS\/CU-KN24ZKY","l":"CS%2FCU-KN24ZKY","p":"₹51,500","u":10,"v":51500,"z":200},{"c":4,"d":"SPLIT AC BLUESTAR 2.0 TR NON INVERTER 3STAR","i":"FA324YLU","k":"FA324YLU","l":"FA324YLU","p":"₹49,000","u":10,"v":49000,"z":200},{"c":4,"d":"SPLIT AC DAIKIN 1.5 NON INVERTER 3STAR","i":"FTL50U","k":"FTL50U","l":"FTL50U","p":"₹39,500","u":10,"v":39500,"z":200},{"c":4,"d":"SPLIT AC DAIKIN 1.8 NON INVERTER 1STAR","i":"FTE60UV16U2","k":"FTE60UV16U2","l":"FTE60UV16U2","p":"₹43,000","u":10,"v":43000,"z":200},{"c":12,"d":"(OTHER PRODUCT) SIEMENS BUILT IN LARDER FRIDGE","i":"KI81RAF31I","k":"KI81RAF31I","l":"KI81RAF31I","p":"₹145,890","u":10,"v":145890,"z":200},{"c":9,"d":"(OTHER PRODUCT) () SIEMENS WARMER DRAWER","i":"BI630DNS1","k":"BI630DNS1","l":"BI630DNS1","p":"₹199,990","u":10,"v":199990,"z":200},{"c":9,"d":"(OTHER PRODUCT) SIEMENS BUILT IN COMBI STEAM OVEN 60 C","i":"HS636GDS1I","k":"HS636GDS1I","l":"HS636GDS1I","p":"₹320,990","u":10,"v":320990,"z":200},{"c":5,"d":"(OTHER PRODUCT) EURIKA FORBES RO","i":"EURIKA-FORBES-RO","k":"EURIKA-FORBES-RO","l":"EURIKA-FORBES-RO","p":"₹42,000","u":10,"v":42000,"z":200},{"c":5,"d":"(OTHER PRODUCT) M G HEAT PUMP","i":"HEAT-PUMP-M--G-1","k":"HEAT-PUMP-M--G-1","l":"HEAT-PUMP-M--G-1","p":"₹265,500","u":10,"v":265500,"z":200},{"c":5,"d":"(OTHER PRODUCT) SUB MERSIBLE PUMP","i":"SUB-MERSIBLE-PUMP","k":"SUB-MERSIBLE-PUMP","l":"SUB-MERSIBLE-PUMP","p":"₹36,630","u":10,"v":36630,"z":200},{"c":5,"d":"(OTHER PRODUCT) TWIN PRESSURE PUMP SYSTEM","i":"CM5-5-TWIN-1-PHASE","k":"CM5-5-TWIN-1-PHASE","l":"CM5-5-TWIN-1-PHASE","p":"₹241,880","u":10,"v":241880,"z":200},{"c":5,"d":"(OTHER PRODUCT) WATER CIRCULATION PUMP","i":"WATER-CIRCULATION-PUMP1","k":"WATER-CIRCULATION-PUMP1","l":"WATER-CIRCULATION-PUMP1","p":"₹35,000","u":10,"v":35000,"z":200},{"c":5,"d":"(OTHER PRODUCT) WATER SOFTENING SYSTEM - AUTOMATIC","i":"MOC-FRP","k":"MOC-FRP","l":"MOC-FRP","p":"₹135,000","u":10,"v":135000,"z":200},{"c":2,"d":"(OTHER PRODUCT) () RO PLANT AND TDS CONTROL SYSTEM 150 LPH WITH UV","i":"RO-150-LPH","k":"RO-150-LPH","l":"RO-150-LPH","p":"₹82,600","u":10,"v":82600,"z":200},{"c":11,"d":"(OTHER PRODUCT) SIEMENS REFRIGERATOR","i":"KI81FHD30I","k":"KI81FHD30I","l":"KI81FHD30I","p":"₹145,890","u":10,"v":145890,"z":200},{"c":11,"d":"(OTHER PRODUCT) SIEMENS REFRIGERATOR 273L","i":"KI86NAF30I","k":"KI86NAF30I","l":"KI86NAF30I","p":"₹226,980","u":10,"v":226980,"z":200},{"c":1,"d":"SPLIT AC () MITSUBISHI HEAVY DUTY 1.6T","i":"18YXS2W60","k":"18YXS2W60","l":"18YXS2W60","p":"₹60,500","u":10,"v":60500,"z":200},{"c":1,"d":"SPLIT AC BLUE STAR 4 TON 3 STAR INVERTER","i":"VC48GATUR3","k":"VC48GATUR3","l":"VC48GATUR3","p":"₹112,000","u":10,"v":112000,"z":200},{"c":1,"d":"SPLIT AC BLUESTAR 2.0 TR INVERTER 3STAR(FY)","i":"IC324YNU","k":"IC324YNU","l":"IC324YNU","p":"₹52,000","u":10,"v":52000,"z":200},{"c":1,"d":"SPLIT AC DAIKIN 1.0 INVERTER 3STAR","i":"FTKL35","k":"FTKL35","l":"FTKL35","p":"₹33,500","u":10,"v":33500,"z":200},{"c":1,"d":"SPLIT AC DAIKIN 1.5 TON INVERTER AC","i":"MTKL50U","k":"MTKL50U","l":"MTKL50U","p":"₹46,080","u":10,"v":46080,"z":200},{"c":1,"d":"SPLIT AC DAIKIN 2.02 TON 3 STAR - INVERTER AC","i":"FTKL71UV","k":"FTKL71UV","l":"FTKL71UV","p":"₹50,500","u":10,"v":50500,"z":200},{"c":1,"d":"SPLIT AC HITACHI 1.0 INVERTER 3STAR","i":"R32-RAS.G312PCAISF","k":"R32-RAS.G312PCAISF","l":"R32-RAS.G312PCAISF","p":"₹34,000","u":10,"v":34000,"z":200},{"c":1,"d":"SPLIT AC MITSUBISHI 1.5 INVERTER 5 STAR","i":"MSY-GR18VF-DA1","k":"MSY-GR18VF-DA1","l":"MSY-GR18VF-DA1","p":"₹58,000","u":10,"v":58000,"z":200},{"c":1,"d":"SPLIT AC ONIDA 1.0 TON IR123MAG INVERTER 3STAR","i":"IR123MAG","k":"IR123MAG","l":"IR123MAG","p":"₹30,000","u":10,"v":30000,"z":200},{"c":1,"d":"SPLIT AC ONIDA 1.5 TON INVERTER 3STAR","i":"IR183MAG","k":"IR183MAG","l":"IR183MAG","p":"₹34,000","u":10,"v":34000,"z":200},{"c":1,"d":"SPLIT AC PANASONIC 1.0 INVERTER 3STAR","i":"CS\/CU-KN12WKY","k":"CS\/CU-KN12WKY","l":"CS%2FCU-KN12WKY","p":"₹32,000","u":10,"v":32000,"z":200},{"c":1,"d":"SPLIT AC PANASONIC 2024 MODEL 1.5 TON 3 STAR","i":"CS-KN18AKY","k":"CS-KN18AKY","l":"CS-KN18AKY","p":"₹38,500","u":10,"v":38500,"z":200},{"c":1,"d":"SPLIT AC VOLTAS 1.0 INVERTER 3STAR","i":"123V EAZQ","k":"123V EAZQ","l":"123V EAZQ","p":"₹30,500","u":10,"v":30500,"z":200},{"c":1,"d":"SPLIT AC VOLTAS 1.5 NON INVERTER 3 STAR","i":"183 CZI3","k":"183 CZI3","l":"183 CZI3","p":"₹37,000","u":10,"v":37000,"z":200},{"c":1,"d":"SPLIT AC VOLTAS 2.0 NON INVERTER 3 S","i":"4502879-243 CZZ","k":"4502879-243 CZZ","l":"4502879-243 CZZ","p":"₹48,500","u":10,"v":48500,"z":200},{"c":1,"d":"SPLIT AC VOLTAS 2.0 TR INVERTER 3STAR","i":"VOLTAS-2.0-TR-INVERTER","k":"VOLTAS-2.0-TR-INVERTER","l":"VOLTAS-2.0-TR-INVERTER","p":"₹45,500","u":10,"v":45500,"z":200},{"c":1,"d":"SPLIT AC VOLTAS 2.0 TR NON INVERTER 3STAR","i":"243-VECTRA-PLUS","k":"243-VECTRA-PLUS","l":"243-VECTRA-PLUS","p":"₹48,500","u":10,"v":48500,"z":200},{"c":1,"d":"SPLIT AC VOLTAS 2.0 TR SPLIT INVERTER AC 5STAR","i":"245V-EAZS","k":"245V-EAZS","l":"245V-EAZS","p":"₹55,000","u":10,"v":55000,"z":200},{"c":13,"d":"STABILIZER STABILIZER 75KV GOLDEN TRANSFORMER SERVO","i":"75KV-GODLEN-SERVO","k":"75KV-GODLEN-SERVO","l":"75KV-GODLEN-SERVO","p":"₹125,000","u":10,"v":125000,"z":200},{"c":7,"d":"TV () SAMSUNG 55INCH QLED Q60C","i":"QA55QE1CAKLXL","k":"QA55QE1CAKLXL","l":"QA55QE1CAKLXL","p":"₹67,000","u":10,"v":67000,"z":200},{"c":7,"d":"TV 32INCH SMART TV","i":"UA32T4380AKXXL","k":"UA32T4380AKXXL","l":"UA32T4380AKXXL","p":"₹16,500","u":10,"v":16500,"z":200},{"c":7,"d":"TV 43INCH TV {SONY}","i":"KD-43X64L","k":"KD-43X64L","l":"KD-43X64L","p":"₹44,000","u":10,"v":44000,"z":200},{"c":7,"d":"TV SAMSUNMG 43INCH 4K SMART","i":"UA43CUE60AKLXL","k":"UA43CUE60AKLXL","l":"UA43CUE60AKLXL","p":"₹34,500","u":10,"v":34500,"z":200},{"c":3,"d":"(OTHER PRODUCT) () VOLTAS STAINLESS STEEL WATER COOLER","i":"BE_WT_01","k":"BE_WT_01","l":"BE_WT_01","p":"₹58,700","u":10,"v":58700,"z":200},{"c":3,"d":"(OTHER PRODUCT) () WATER COOLER FULLY SS-150-150 (150 COOLING - 15","i":"SS-150-150","k":"SS-150-150","l":"SS-150-150","p":"₹70,800","u":10,"v":70800,"z":200}],"ctg":[{"i":0,"n":"All"},{"i":8,"n":"CASSETTE"},{"i":10,"n":"DISHWASHER"},{"i":4,"n":"FIXED AC"},{"i":12,"n":"FRIDGE"},{"i":9,"n":"OVEN"},{"i":5,"n":"PUMPS"},{"i":2,"n":"PURIFIER"},{"i":11,"n":"REFRIGERATOR"},{"i":1,"n":"SPLIT AC"},{"i":13,"n":"STABILIZER"},{"i":-300,"n":"Services"},{"i":7,"n":"TV"},{"i":3,"n":"WATER COOLER"}],"und":[{"i":10,"n":"_"}],"ngc":"LAKHI ELECTRIONS AIRCONDITIONERS","tel2":"+919825513000","cor2":"sanjana@lakhiairconditioners.com","dir2":"GST - 24AAIPU5764D1ZI","alf":"Alphabet","myp":"Highest Price","mnp":"Lower Price","ctgs":"Category","orp":"Sort By","bsc":"Search","crt":true,"nam":"Product Name","sct":"Buy Now","ernw":"Error connecting to server, please check your internet connection and try again.","img":true,"uni":false,"cla":true,"wha":true,"clo":"Close","nxt":"Next","prv":"Previous","sin":"No information","clt":"w3-red","tmp":1716914447317,"lg":"logo"} /*#d4t4#*/;
+		</script>
+    </body>
+</html>
