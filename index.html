@@ -2,13 +2,13 @@
 <html>
     <head>
         <title>LAKHI ELECTRIONS AIRCONDITIONERS</title>
-	<link rel="icon" href="shop.png" type="image/png">
+	    <link rel="icon" href="shop.png" type="image/png">
 	<!-- TrustBox script -->
         
          <!-- End TrustBox script -->
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <meta name="Lakhi Airconditioners" content="A page to veiw show of are prodect (working on add all)with avg price" >
+        <link rel="stylesheet" href="w3.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -108,7 +108,7 @@
 			  height:60px;
 			  bottom:40px;
 			  right:40px;
-			  background-color:#25d366;
+			  background-color:#52e788;
 			  color:#FFF;
 			  border-radius:50px;
 			  text-align:center;
@@ -142,7 +142,7 @@
 				cursor: pointer;
 			}
 			.btnPag{
-				color: #1A73E8;
+				color: #89a9d3;
 				border: none;
 				background: transparent;
 			}
@@ -226,7 +226,7 @@
 
     </head>
 	
-    <body ng-app='app' style="background-color: #ebebeb;" ng-controller='ctrMan' ng-cloack>
+    <body ng-app='app' style="background-color: #222222;" ng-controller='ctrMan' ng-cloack>
         
         <div id="loader"></div>
         <div id="ctnMan" style="visibility: hidden;">
@@ -255,7 +255,7 @@
             </div>
 
 
-            <div class="w3-row cnt-ctr-sml w3-merriweather w3-card">
+            <div class="w3-row cnt-ctr-sml w3-merriweather w3-card" style="background-color: #000000;">
                 <div class="w3-container w3-col s5 w3-center" >
                     <div onclick="document.getElementById('modCtg').style.display='block'" ng-hide="ctgs.length<2">
                         <h4 class="notSelTxt" style="color: {{cblu}};">{{txtCtg}}</h4>
@@ -301,7 +301,7 @@
 
                 <div ng-init='configPages()'  class="w3-row-padding ctnItm">
                     <div class="w3-col s12 m6 l4" ng-repeat='itm in itmsCur | orderBy:sort| startFromGrid: currentPage * pageSize | limitTo: pageSize '>
-                        <div class="w3-panel w3-card w3-white mrgItm w3-merriweather">
+                        <div class="w3-panel w3-card w3-black mrgItm w3-merriweather">
                             <div ng-hide="!img"  class="w3-container w3-margin-bottom w3-center" style="height: 260px">
                                 <img ng-hide="{{itm.l=='null'?true:false}}" src="{{itm.l+'.jpg'}}" class="w3-round thbGrd" onload="ajIm(this)">
                                 <i ng-hide="{{itm.l=='null'?false:true}}" class="fa fa-image w3-round thbGrd" style="margin-top:60px;"></i>
@@ -358,7 +358,7 @@
 
 
             <div id="modCrt" class="w3-modal" style="padding-top:30px;z-index: 3000;">
-                <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px;overflow: auto; height: 90%;">
+                <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px;overflow: auto; height: 90%;background-color:#000000;color:#FFFFFF">
 
                     <div class="w3-center"><br>
                         <span onclick="document.getElementById('modCrt').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">{{clo}} &times;</span>
@@ -415,7 +415,7 @@
                                 class="w3-button w3-display-topright">&times;</span>
                         <h2>{{txtSrt}}</h2>
                     </header>
-                    <div class="w3-container">
+                    <div class="w3-container" style="background-color:#000000;color:#FFFFFF">
                         <ul class="w3-ul w3-border-bottom">
                             <li class="w3-container notSelTxt" ng-click="selSrt(0)">{{txtAlf}}</li>
                             <li class="w3-container notSelTxt" ng-click="selSrt(1)">{{txtMyp}}</li>
@@ -432,7 +432,7 @@
                                 class="w3-button w3-display-topright">&times;</span>
                         <h2>{{txtCtg}}</h2>
                     </header>
-                    <div class="w3-container" style="overflow: auto; max-height: 320px;">
+                    <div class="w3-container" style="overflow: auto; max-height: 320px;background-color:#000000;color:#FFFFFF">
                         <ul class="w3-ul w3-monospace" ng-repeat='ctg in ctgs'>
                             <li class="w3-border-bottom w3-container" ng-click='selCtg(ctg)'>{{ctg.n}}</li>
                         </ul>
@@ -498,10 +498,10 @@
 			      $scope.ctok='';
 			      $scope.ernw='';
 			      $scope.clt = 'w3-black';
-			      $scope.cblu = '#1A73E8';
-			      $scope.cgre = '#33AA66';
+			      $scope.cblu = '#1A2EEA';
+			      $scope.cgre = '#ffffff';
 			      $scope.clo = 'close';
-
+				  
 				  $scope.configPages = function() {
 				  		var q = $scope.srch;
 				  		try{
