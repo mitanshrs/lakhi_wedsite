@@ -13,7 +13,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-	<script src="service-worker.js" async></script>
 	<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
         <style type="text/css">
 			.w3-merriweather {
@@ -231,71 +230,6 @@
         
         <div id="loader"></div>
         <div id="ctnMan" style="visibility: hidden;">
-			<div id="modCrt" class="w3-modal" style="display:block; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); width:90%; max-width:600px; height:auto; background-color:#000; color:#FFF; border-radius:10px; padding:20px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
-				<div class="w3-center" style="margin-bottom:20px;">
-					<span 
-						onclick="closeModal()" 
-						class="w3-button w3-xlarge w3-hover-red w3-display-topright" 
-						title="Close Modal" 
-						style="position:absolute; top:10px; right:20px; font-size:20px; cursor:pointer;">
-						Close ×
-					</span>
-					<h2 style="margin-top:0;">Please Agree to Proceed</h2>
-				</div>
-				<form class="w3-container">
-					<!-- Agreement Checkbox -->
-					<div class="w3-section" style="margin-bottom:20px; text-align:left;">
-						<input 
-							type="checkbox" 
-							id="agree" 
-							style="margin-right:10px;">
-						<label for="agree">
-							I agree to the 
-							<a href="https://main.lakhiairconditioners.com/tac" style="color: #FF5733; text-decoration:underline;">Terms and Conditions</a> 
-							and 
-							<a href="https://main.lakhiairconditioners.com/pp" style="color: #FF5733; text-decoration:underline;">Privacy Policy</a>.
-						</label>
-					</div>
-			
-					<!-- Disclaimer Section -->
-					<p style="font-size:14px; margin-bottom:20px;">
-						* Prices may not be accurate, and not all products are listed.
-					</p>
-			
-					<!-- Continue Button -->
-					<div class="w3-center">
-						<button 
-							class="w3-button w3-red w3-hover-opacity w3-round-large" 
-							style="padding:10px 20px; font-size:16px; cursor:pointer;" 
-							onclick="continueAction(event)">
-							Continue
-						</button>
-					</div>
-				</form>
-			</div>
-			
-			<script>
-				// Function for Close Button
-				function closeModal() {
-					var isChecked = document.getElementById("agree").checked;
-					if (!isChecked) {
-						window.location.href = "https://shop.lakhiairconditioners.com/not.tac-pp.html";
-					} else {
-						document.getElementById("modCrt").style.display = "none";
-					}
-				}
-			
-				// Updated Function for Continue Button
-				function continueAction(event) {
-					event.preventDefault(); // Prevent form submission or default button behavior
-					var isChecked = document.getElementById("agree").checked;
-					if (isChecked) {
-						document.getElementById("modCrt").style.display = "none"; // Hide the modal
-					} else {
-						alert("Please tick the checkbox to agree to the Terms and Conditions and Privacy Policy before proceeding.");
-					}
-				}
-			</script>
            
             <div class="w3-row {{clt}} fxd" >
 		
@@ -405,9 +339,8 @@
                         <div class="w3-container" id="contact">
                             <h4 class="w3-merriweather">{{ngc}}</h4>
                             <a href="tel:{{txtTel}}" ><i class="fa fa-phone"></i>{{txtTel}}</a><br>
-                            <a class="w3-margin-top" href="mailto:{{txtCor}}" ng-hide="txtCor==''||txtCor==null?true:false"><i class="fa fa-envelope"></i>{{txtCor}}</a></br>
-			    <a href="https://bc.lakhiairconditioners.com">Business Cards</a>                    
-			</div>
+                            <a class="w3-margin-top" href="mailto:{{txtCor}}" ng-hide="txtCor==''||txtCor==null?true:false"><i class="fa fa-envelope"></i>{{txtCor}}</a>
+                        </div>
                     </div>
 
                     <div class="{{ txtTel==null||txtTel==''?'':'w3-half' }}" ng-hide="txtInf==null||txtInf==''?true:false">
