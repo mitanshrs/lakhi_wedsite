@@ -231,7 +231,7 @@
         
         <div id="loader"></div>
         <div id="ctnMan" style="visibility: hidden;">
-			<div id="modCrt" class="w3-modal" style="display:block; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); width:90%; max-width:600px; height:auto; background-color:#000; color:#FFF; border-radius:10px; padding:20px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+			<div id="tacpp" class="w3-modal" style="display:block; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); width:90%; max-width:600px; height:auto; background-color:#000; color:#FFF; border-radius:10px; padding:20px; box-shadow:0 4px 8px rgba(0,0,0,0.2);">
 				<div class="w3-center" style="margin-bottom:20px;">
 					<span 
 						onclick="closeModal()" 
@@ -245,23 +245,22 @@
 				<form class="w3-container">
 					<!-- Agreement Checkbox -->
 					<div class="w3-section" style="margin-bottom:20px; text-align:left;">
-						<input 
-							type="checkbox" 
-							id="agree" 
-							style="margin-right:10px;">
+						<input type="checkbox" id="agree" style="margin-right:10px;">
 						<label for="agree">
 							I agree to the 
-							<a href="https://main.lakhiairconditioners.com/tac" style="color: #FF5733; text-decoration:underline;">Terms and Conditions</a> 
+							<a href="https://main.lakhiairconditioners.com/tac" style="color: #FF5733; text-decoration:underline;">
+								Terms and Conditions
+							</a> 
 							and 
-							<a href="https://main.lakhiairconditioners.com/pp" style="color: #FF5733; text-decoration:underline;">Privacy Policy</a>.
+							<a href="https://main.lakhiairconditioners.com/pp" style="color: #FF5733; text-decoration:underline;">
+								Privacy Policy
+							</a>.
 						</label>
 					</div>
-			
 					<!-- Disclaimer Section -->
 					<p style="font-size:14px; margin-bottom:20px;">
 						* Prices may not be accurate, and not all products are listed.
 					</p>
-			
 					<!-- Continue Button -->
 					<div class="w3-center">
 						<button 
@@ -281,16 +280,16 @@
 					if (!isChecked) {
 						window.location.href = "https://shop.lakhiairconditioners.com/not.tac-pp.html";
 					} else {
-						document.getElementById("modCrt").style.display = "none";
+						document.getElementById("tacpp").style.display = "none";
 					}
 				}
 			
-				// Updated Function for Continue Button
+				// Function for Continue Button
 				function continueAction(event) {
-					event.preventDefault(); // Prevent form submission or default button behavior
+					event.preventDefault();
 					var isChecked = document.getElementById("agree").checked;
 					if (isChecked) {
-						document.getElementById("modCrt").style.display = "none"; // Hide the modal
+						document.getElementById("tacpp").style.display = "none";
 					} else {
 						alert("Please tick the checkbox to agree to the Terms and Conditions and Privacy Policy before proceeding.");
 					}
