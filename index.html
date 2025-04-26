@@ -390,9 +390,9 @@
                     </div>
                 </div>
                 <div class='btn-group w3-center spc50'>
-                    <button type='button' class='w3-merriweather btnPag pointer' ng-hide='currentPage == 0' ng-click='ntr()'>< {{txtPrv}}</button>
-                    <label class="w3-merriweather w3-large w3-margin-left pagCur">{{currentPage+1}}</label><label class="w3-merriweather w3-large w3-margin-right">{{' / '+ pages.length }}</label>
-                    <button type='button' class='w3-merriweather btnPag pointer' ng-hide='currentPage >= itmsCur.length/pageSize - 1' , ng-click='nxt()'>{{txtNxt}} ></button>
+                    <button type='button' class='w3-merriweather btnPag pointer' ng-hide='currentPage == 0' ng-click='ntr()' style="color: white;">< {{txtPrv}}</button>
+                    <label class="w3-merriweather w3-large w3-margin-left pagCur" style="color: white;">{{currentPage+1}}</label><label class="w3-merriweather w3-large w3-margin-right" style="color: white;">{{' / '+ pages.length }}</label>
+                    <button type='button' class='w3-merriweather btnPag pointer' ng-hide='currentPage >= itmsCur.length/pageSize - 1' , ng-click='nxt()' style="color: white;">{{txtNxt}} ></button>
                 </div>
 
             </div>
